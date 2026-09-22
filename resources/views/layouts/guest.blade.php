@@ -7,8 +7,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon-192.png">
+    <link rel="icon" type="image/png" href="{{ asset('icon-192.png') }}">
+            <meta property="og:image" content="{{ asset('icon-192.png') }}">
+
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
