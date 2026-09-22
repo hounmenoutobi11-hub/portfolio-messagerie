@@ -8,6 +8,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/setup-admin', function () {
+    \App\Models\User::updateOrCreate(
+        ['email' => 'hounmenoutobi11@gmail.com'],
+        [
+            'name' => 'Tobi',
+            'password' => \Illuminate\Support\Facades\Hash::make('John2904'),
+            'email_verified_at' => now()
+        ]
+    );
+    return "Compte administrateur cree avec succes !";
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
